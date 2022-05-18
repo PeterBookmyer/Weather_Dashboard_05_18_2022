@@ -1,0 +1,28 @@
+.mainEl {
+  display: flex;
+  flex-direction: row;
+}
+
+.navEl {
+  border: solid black;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-left: 5px;
+}
+
+.weatherEl {
+  border: solid black;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 5px;
+}
+
+.forecast {
+  border-bottom: solid black;
+  height: 75%;
+}
