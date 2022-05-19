@@ -1,3 +1,7 @@
+li {
+  cursor: pointer;
+}
+
 .mainEl {
   display: flex;
   flex-direction: row;
@@ -25,4 +29,10 @@
 .forecast {
   border-bottom: solid black;
   height: 75%;
+}
+
+.extForecast {
+  display: flex;
+  flex-direction: row;
+  height: 50%;
 }
