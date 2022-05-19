@@ -12,11 +12,12 @@ const btnDallas = $("#btnDallas")
 const btnDetroit = $("#btnDetroi");
 const btnSeattle = $("#btnSeattle");
 const btnMiami = $("#btnMiami");
-const requestUrl = "https://api.openweathermap.org/data/2.5/weather"
+const requestUrl = "http://api.weatherapi.com/v1"
 
 
-btnDenver.on('click', function () {
-});
+// btnDenver.on('click', function () {
+//     console.log(denverData)
+// });
 
 function getWeatherDenver (denverData) {
     $.ajax({
@@ -26,7 +27,7 @@ function getWeatherDenver (denverData) {
     dataType: "json",
     contentType: "application/json",
     headers: {
-      "Authorization": "",
+      "Authorization": "7c9ac1de3ca642d080e50650221905",
     },
     data: JSON.stringify({
       filterProcessing: "1 and 2",
@@ -38,7 +39,7 @@ function getWeatherDenver (denverData) {
     }),
   })
 
-  .then((data) => console.log(denverData))
+  .then((data) => btnDenver.on('click', denverData))
   .catch((err) => console.log(err));
 };
 
