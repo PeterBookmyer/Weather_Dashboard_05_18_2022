@@ -13,7 +13,7 @@ $(".btnGroup").on("click", function (event) {
 function getWeather(cityName) {
   $.ajax({
     processData: false,
-    url: `http://api.weatherapi.com/v1/current.json?key=7c9ac1de3ca642d080e50650221905&q=${cityName}&aqi=no`,
+    url: `https://api.weatherapi.com/v1/current.json?key=7c9ac1de3ca642d080e50650221905&q=${cityName}&aqi=no`,
     method: "POST",
     dataType: "json",
     contentType: "application/json",
