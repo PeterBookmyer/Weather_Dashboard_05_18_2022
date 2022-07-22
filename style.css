@@ -1,38 +1,68 @@
-li {
-  cursor: pointer;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+h1 {
+  background-color: rgb(0, 46, 61);
+  color: aliceblue;
+  margin: 1rem;
 }
 
-.mainEl {
+body {
+  margin: 1rem;
+}
+
+article {
+  grid-column: 2;
+}
+
+aside {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+#currentWeather {
+  background-color: grey;
+  border: lightblue;
+  border: 1rem;
+  padding: 1rem;
+}
+#extForecast {
+  background-color: rgb(184, 230, 245);
   display: flex;
   flex-direction: row;
 }
 
-.navEl {
+.card {
+  background-color: rgb(188, 228, 255);
+  margin-right: 3rem;
+}
+
+#styleToPage {
+  text-align: center;
   border: solid black;
-  width: 25%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: stretch;
-  margin-left: 5px;
 }
 
-.weatherEl {
-  border: solid black;
-  width: 75%;
+main {
   display: flex;
-  flex-direction: column;
-  margin-right: 5px;
+}
+h3 {
+  padding: 2rem;
 }
 
-.forecast {
-  border-bottom: solid black;
-  height: 75%;
+#mybutton {
+  margin-top: 1rem;
 }
 
-.extForecast {
-  display: flex;
-  flex-direction: row;
-  height: 50%;
+#pastCity {
+}
+
+@media (min-width: 768px) {
+  #fiveDay {
+    display: flex;
+    background-color: rgba(102, 192, 203, 0.406);
+  }
 }
