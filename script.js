@@ -4,10 +4,13 @@ const pastCity = JSON.parse(localStorage.getItem("userCity"))
   ? JSON.parse(localStorage.getItem("userCity"))
   : [];
 const extForecast = $("#extForecast");
+
+//function to get todays date and format
 const today = new Date();
 let todaysdate =
   today.getMonth() + "-" + today.getDate() + "-" + today.getFullYear();
 
+  //function for API call
 function getWeather(lat, lon) {
   let requestUrl =
     "https://api.openweathermap.org/data/2.5/onecall?lat=" +
@@ -25,6 +28,7 @@ function getWeather(lat, lon) {
   });
 }
 
+//function to get the current weather, create elements for weather data and append to DOM
 function currentWeather(weather) {
   currentWeatherEl.html("");
   let temp = document.createElement("p");
@@ -36,27 +40,28 @@ function currentWeather(weather) {
   currentWeatherEl.append(temp, wind, humidity);
 }
 
+//function to get future weather including 5 day forecast...create els and append
 function getExtendedWeather(daily) {
   extForecast.html("");
   for (let i = 1; i < 6; i++) {
     let card = document.createElement("div");
+    let header = document.createElement("div");
+    let temp = document.createElement("p");
+    let wind = document.createElement("p");
+    let humidity = document.createElement("p");
     card.setAttribute("class", "card");
     card.setAttribute("id", "styleToPage");
     card.setAttribute("class", "container-fluid");
-    let header = document.createElement("div");
     header.setAttribute("class", "card-header");
     header.textContent = "Ext Forecast";
-    let temp = document.createElement("p");
     temp.textContent = "tempurature:" + daily[i].temp.day;
-    let wind = document.createElement("p");
     wind.textContent = "wind:" + daily[i].wind_speed + "mph";
-    let humidity = document.createElement("p");
     humidity.textContent = "humidity:" + daily[i].humidity + "%";
     card.append(header, temp, wind, humidity);
     extForecast.append(card);
   }
 }
-
+//function for geomapping lat lon to city name entered by user
 function geomapping(cityname) {
   var requestUrl =
     "https://api.openweathermap.org/geo/1.0/direct?q=" +
@@ -73,6 +78,7 @@ function geomapping(cityname) {
 }
 $("#dateEl").text(todaysdate);
 
+//kicks everything off based on click event with search button
 $("#mybutton").click(function (event) {
   event.preventDefault();
   let city = $("#myinput").val();
