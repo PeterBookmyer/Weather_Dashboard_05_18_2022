@@ -7,10 +7,10 @@ const extForecast = $("#extForecast");
 
 //function to get todays date and format
 const today = new Date();
-let todaysdate =
-  today.getMonth() + "-" + today.getDate() + "-" + today.getFullYear();
+let todaysDate =
+  today.getMonth() + 1 + "-" + today.getDate() + "-" + today.getFullYear();
 
-  //function for API call
+//function for API call
 function getWeather(lat, lon) {
   let requestUrl =
     "https://api.openweathermap.org/data/2.5/onecall?lat=" +
@@ -76,7 +76,8 @@ function geomapping(cityname) {
     getWeather(lat, lon);
   });
 }
-$("#dateEl").text(todaysdate);
+$("#todaysDate").text(todaysDate);
+console.log(todaysDate);
 
 //kicks everything off based on click event with search button
 $("#mybutton").click(function (event) {

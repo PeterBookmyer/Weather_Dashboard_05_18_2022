@@ -13,6 +13,7 @@ h1 {
 .header {
   background-color: black;
   font-size: 3rem;
+  color: aliceblue;
 }
 
 .search {
@@ -65,7 +66,7 @@ h3 {
   padding: 2rem;
 }
 
-#mybutton {
+#searchButton {
   margin-top: 1rem;
   padding-left: 0%;
 }
