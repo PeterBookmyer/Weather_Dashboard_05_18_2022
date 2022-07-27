@@ -1,18 +1,15 @@
-var inputEl = $("#myinput");
-var currentWeatherEl = $("#currentWeather");
-var pastCity = JSON.parse(localStorage.getItem("userCity"))
+const inputEl = $("#myinput");
+const currentWeatherEl = $("#currentWeather");
+const pastCity = JSON.parse(localStorage.getItem("userCity"))
   ? JSON.parse(localStorage.getItem("userCity"))
   : [];
-var extForecast = $("#extForecast");
+const extForecast = $("#extForecast");
 const today = new Date();
 let todaysdate =
   today.getMonth() + "-" + today.getDate() + "-" + today.getFullYear();
 
-// let tomorrow =
-//   today.getMonth() + "-" + (today.getDate()++) + "-" + today.getFullYear();
-
-function getWeatherNow(lat, lon) {
-  var requestUrl =
+function weatherDay(lat, lon) {
+  let requestUrl =
     "https://api.openweathermap.org/data/2.5/onecall?lat=" +
     lat +
     "&lon=" +
@@ -39,7 +36,7 @@ function geomapping(cityname) {
   }).then(function (response) {
     var lat = response[0].lat;
     var lon = response[0].lon;
-    getWeatherNow(lat, lon);
+    weatherDay(lat, lon);
   });
 }
 $("#todaysDate").text(todaysdate);
