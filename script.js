@@ -4,6 +4,7 @@ const inputCity = JSON.parse(localStorage.getItem("inputCity"))
   ? JSON.parse(localStorage.getItem("inputCity"))
   : [];
 const extForecast = $("#extForecast");
+let inputCityEl = $("#pastCity");
 
 //function to get todays date and format
 const today = new Date();
@@ -83,11 +84,12 @@ console.log(todaysDate);
 $("#searchButton").click(function (event) {
   event.preventDefault();
   let city = $("#myinput").val();
-  let inputCityEl = $("#pastCity");
-  let inputCityTxt = document.createElement("button");
   inputCity.push(city);
   localStorage.setItem("inputCity", JSON.stringify(inputCity));
-  inputCityTxt.innerHTML = inputCity.value;
-  inputCityEl.append(city);
+  let inputCityTxt = document.createElement("button");
+  inputCityTxt.setAttribute("class", "btn", "btn-danger");
+  console.log(inputCity);
+  inputCityTxt.innerHTML = inputCity[0];
+  inputCityEl.append(inputCityTxt);
   geomapping(city);
 });
