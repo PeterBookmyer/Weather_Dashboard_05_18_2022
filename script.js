@@ -26,7 +26,6 @@ function getWeather(lat, lon) {
 }
 
 function currentWeather(weather) {
-  console.log(weather.temp);
   currentWeatherEl.html("");
   let temp = document.createElement("p");
   temp.textContent = "Temperature: " + weather.temp + " degrees F";
@@ -38,7 +37,6 @@ function currentWeather(weather) {
 }
 
 function getExtendedWeather(daily) {
-  console.log(daily);
   extForecast.html("");
   for (let i = 1; i < 6; i++) {
     let card = document.createElement("div");
@@ -73,7 +71,7 @@ function geomapping(cityname) {
     getWeather(lat, lon);
   });
 }
-$("#todaysDate").text(todaysdate);
+$("#dateEl").text(todaysdate);
 
 $("#mybutton").click(function (event) {
   event.preventDefault();
