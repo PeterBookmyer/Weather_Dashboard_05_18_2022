@@ -1,7 +1,7 @@
 const inputEl = $("#myinput");
 const currentWeatherEl = $("#currentWeather");
-const pastCity = JSON.parse(localStorage.getItem("userCity"))
-  ? JSON.parse(localStorage.getItem("userCity"))
+const inputCity = JSON.parse(localStorage.getItem("inputCity"))
+  ? JSON.parse(localStorage.getItem("inputCity"))
   : [];
 const extForecast = $("#extForecast");
 
@@ -83,11 +83,11 @@ console.log(todaysDate);
 $("#searchButton").click(function (event) {
   event.preventDefault();
   let city = $("#myinput").val();
-  pastCity.push(city);
-  localStorage.setItem("userCity", JSON.stringify(pastCity));
-  let pastCityEl = $("#pastCity");
-  let pastCityTxt = document.createElement("button");
-  pastCityTxt.innerHTML = pastCity.value;
-  pastCityEl.append(city);
+  let inputCityEl = $("#pastCity");
+  let inputCityTxt = document.createElement("button");
+  inputCity.push(city);
+  localStorage.setItem("inputCity", JSON.stringify(inputCity));
+  inputCityTxt.innerHTML = inputCity.value;
+  inputCityEl.append(city);
   geomapping(city);
 });
