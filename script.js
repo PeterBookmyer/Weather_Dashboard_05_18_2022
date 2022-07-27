@@ -80,7 +80,7 @@ $("#todaysDate").text(todaysDate);
 console.log(todaysDate);
 
 //kicks everything off based on click event with search button
-$("#mybutton").click(function (event) {
+$("#searchButton").click(function (event) {
   event.preventDefault();
   let city = $("#myinput").val();
   pastCity.push(city);
